@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<title>STLTO Finder</title> 
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	   
+		<link rel="stylesheet" type="text/css" href="stylesheet.css">
+		<link rel="stylesheet" type="text/css" href="jquery-ui-1.8.20.custom.css">
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="jquery-ui-1.8.20.custom.min.js"></script>
+		<script type="text/javascript" src="function.js"></script>
+	</head>
+
+	<body>
+		<div id="fb-root"></div>
+
+		<div id="container" class="">
+
+			<div id="location-container">
+				<form id="location-finder">
+					<span>enter your postal code</span><input type="text" id="text-input" placeholder="A1A 1A1"><input type="image" class="enter-btn" src="images/enter_btn.png" name="submit" value="&nbsp;"></a> <span>or city</span> <input type="text" id="text-input" placeholder="Enter City Here"><input type="image" class="enter-btn" src="images/enter_btn.png" name="submit" value="&nbsp;"></a>
+				</form>
+			</div>
+
+			<div id="map-container">
+				<iframe width="690" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.ca/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=X-Design,+Toronto,+ON&amp;aq=0&amp;oq=x-design&amp;sll=43.656877,-79.32085&amp;sspn=0.880291,2.113495&amp;ie=UTF8&amp;hq=X-Design,&amp;hnear=Toronto,+Toronto+Division,+Ontario&amp;ll=43.664017,-79.342918&amp;spn=0.02374,0.088586&amp;t=m&amp;output=embed"></iframe><br />
+			</div>
+
+			<div id="list-container">
+				<h3>Stores near you</h3>
+
+				<div id="table-container">
+					<p id="store"></p>
+					<table>
+
+					</table>
+
+				</div>
+			</div>
+
+			<div class="share-container">
+				<a href=""><img id="share_btn" src="images/share_btn.png" alt=""></a>
+				<a href=""><img id="twitter_btn" src="images/twitter_btn.png" alt=""></a>
+			</div>
+		</div>
+
+    <script>
+		$(document).ready(function() {
+			$.ajax(
+			    type:'GET',
+			    url:"http://lcboapi.com",
+			    data:"/products/232322/stores&callback=setJSON",
+			    success:function(list) {
+
+			    	var stores = [];
+
+		            // Loop through the items
+		            for(var i=0, l=list.result.length; i < l && i < 16; i)
+		            {
+		            	var storename = list.result[i].name;
+
+		            	stores.push(storename);
+		            }
+
+		            $('#store').html(stores.join(''));
+
+			    },
+			    dataType:'jsonp'
+			);
+		}
+
+	</script>
+
+
+
+	</body>
+	
+</html>

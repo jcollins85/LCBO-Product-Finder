@@ -1,0 +1,135 @@
+/*      RESET      */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, iframe, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-style:inherit;
+	font-family:inherit;
+}
+
+/* FONTS */
+@font-face {
+    font-family: 'GillSans';
+    src: url('fonts/GillSans.eot');
+    src: url('fonts/GillSans.eot?#iefix') format('embedded-opentype'),
+         url('fonts/GillSans.woff') format('woff'),
+         url('fonts/GillSans.ttf') format('truetype'),
+         url('fonts/GillSans.svg#GillSans') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*		MAIN BODY		*/
+body{width: 800px; height:1120px; margin: 0; font-family: 'GillSans';}
+a{color: none; text-decoration: none; cursor: pointer;}
+a:hover{text-decoration: none; cursor: pointer; }
+a:visited { color: white; }
+h3 { font-weight: 500; }
+.hide{display: none;}
+
+#container{width: 810px; height: 1120px; background-image: url('images/finder_bg.png'); background-repeat: no-repeat; background-color: #000;}
+
+#location-container { padding-top: 130px; height: 65px; width: 690px; margin-left: 55px;}
+#location-container span { color: white; vertical-align: 15px; }
+form #text-input { height: 38px; vertical-align: 16px; }
+
+.enter-btn {
+/*	background-color: #EB8A29;*/        	
+	height: 41px;
+	width: 71px;
+	left: -1px;
+	display: inline-block;
+	position: relative;
+        border: none;
+        overflow: hidden;                
+}
+
+#map-container { width: 690px; height: 500px;  margin-left: 50px; display: block; }
+.loading { padding-top: 230px; padding-left: 320px;}
+#site-link { position: absolute; top: 1015px; left: 56px; width: 160px; height: 20px; display: block; }
+#kpdi-link { position: absolute; top: 1085px; left: 45px; width: 540px; height: 20px; display: block; color: white; font-size: 10px;}
+#kpdi { color: red;}
+
+#list-container { width: 690px; height:305px; margin-top: 10px; margin-left: 50px; }
+#list-container h3 { color: white;}
+#table-container { background-color: white; width: 690px; height: 280px; margin-top: 2px;}
+.closest-stores {width: 100%; border-collapse: collapse;}
+.closest-stores td {font-size:  12px; padding-left: 32px;}
+.closest-stores th {color: white; height: 30px; background-image: url('images/grey_pixels.png'); text-align: left; padding-left: 27px; font-size: 13px;}
+.store-data { height: 75px; border-bottom: 1px solid grey}
+.map-num {width: 60px; padding-left: 12px;}
+.marker { cursor: pointer;}
+.store-info { padding-left: 10px; }
+.grey-row {width: 100%; height:25px; background-image: url('images/grey_pixels.png');}
+.map-header { width: 65px;}
+.info-header { width: 220px; }
+.availability-header { width: 180px;}
+.distance-header { width: 75px;}
+.request-header { width: 160px;}
+
+
+.share-container { position: absolute; top: 1045px; left: 50px; width: 165px; height: 30px;}
+.twitter_btn {}
+.share_btn {}
+
+#request-container {padding-top: 150px; margin-left: 55px; width: 690px; height: 100%; }
+.request-h2 { color: white; }
+#request-form { margin-top: 20px; background-image: url('images/form_bg.png'); width: 702px; height: 622px; padding-top: 20px;}
+#request-form input { border: solid 1px black; border-radius: 5px; display: inline-block; }
+#request-form textarea { width: 280px; height: 90px; border: solid 1px black; border-radius: 5px; display: inline-block; resize: none; padding-left:  5px; padding-top: 10px; overflow: auto}
+.requested-location { display: inline-block; width: 280px; height: 90px; padding-left: 5px; padding-top: 10px; background-color: white; border-radius: 5px;}
+.form-label { width: 135px; display: inline-block; color: white; vertical-align: top;}
+.single-input { width: 280px; height: 30px; padding-left: 5px;}
+.input { margin-bottom: 15px; margin-left: 25px; }
+.stlto-red-option { width: 138px; height: 152px; display: inline-block; background-image: url('images/red_select.png'); }
+.stlto-white-option { width: 138px; height: 152px; display: inline-block; background-image: url('images/white_select.png'); margin-left: 10px;}
+#white-box { margin-top: 30px; margin-left: 10px; border: none !important; }
+#red-box { margin-top: 30px; margin-left: 10px; border: none !important; }
+.select-store { display: inline-block; width: 132px; height: 32px; vertical-align: top;}
+.subscribe { display: inline-block; width: 75px; height: 32px; margin-right: 10px; vertical-align: top;}
+#subscribe{background: url('images/request_btn.png') 0 0 no-repeat; width: 73px; height: 33px; cursor: pointer;}
+.back { display: inline-block; width: 103px; height: 33px; }
+#back-to-map { background: url('images/back_btn.png') 0 0 no-repeat; display: inline-block; width: 103px; height: 33px; }
+
+
+.infobox-wrapper {
+    display:none;
+}
+
+.infoBox { margin-top: 15px; }
+
+#infobox {           
+    color:#FFF;    
+}
+
+.infobox h3 { margin-top: 5px; margin-left:5px; color: white;}
+.availability { margin-left: 154px; margin-top: 30px; position: absolute; color: white; font-size: 25px;}
+.none {margin-left: 155px; width: 280px; font-size: 19px; }
+
+.bottles { color: #FFEBA2;}
+.no-stock {color: red;}
+
+.store-details { margin-top: 175px; margin-left: 10px; display: inline-block; color: white; position: absolute; }
+.store-hours { position: absolute; width: 180px; display: inline-block; margin-top: 140px; margin-left: 290px; font-size: 13px; color: white; }
+.store-hours h4 { text-align: center; }
+.hours { float: right;}
+.warning {color: red; }
+
+.call-ahead{margin-left: 155px; margin-top: 90px; position: absolute; color: white; font-size: 15px;}
+.request-stlto {position: absolute; margin-left: 155px; margin-top: 90px; }
+
+.error { color: red; margin-left: 10px;}
+.required { color: red;}
+.post-submit { background-image: url('images/form_bg.png'); width: 702px; height: 642px; color: white; margin-top: -20px;}
+.post-submit h2 { top: 35px; left: 20px; position: relative; }
+.post-success { position: relative; top: 75px; left: -2px; display: block; }
+.thank-you { margin-top: 50px; margin-left: 20px;}
+.thank-you-message { margin-bottom: 10px; }
